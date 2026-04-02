@@ -2,7 +2,8 @@
 
 ## 📌 Overview
 
-ShopWave is a Spring Boot-based RESTful application developed as part of the Enterprise Application Development course. The system manages products, categories, and orders using a layered architecture and follows best practices in modern Java backend development.
+ShopWave is a Spring Boot-based RESTful application developed as part of the Enterprise Application Development course.
+The system manages **products, categories, and orders** using a layered architecture and follows best practices in modern Java backend development.
 
 ---
 
@@ -19,7 +20,7 @@ ShopWave is a Spring Boot-based RESTful application developed as part of the Ent
 
 ---
 
-## 🏗️ Project Structure
+## 📁 Project Structure
 
 ```
 com.shopwave
@@ -28,53 +29,61 @@ com.shopwave
 ├── repository    # Data Access Layer
 ├── model         # Entities
 ├── dto           # Data Transfer Objects
-├── exception     # Custom Exceptions
+└── exception     # Custom Exceptions
 ```
 
 ---
 
 ## 🚀 Features Implemented
 
-### ✅ Product Management
+### 📦 Product Management
 
 * Create product
-* Get all products (with pagination)
+  ![Create Product](images/creatingproduct.png)
+
+* Get all products
+  ![Get All Products](images/getproduct.png)
+
 * Get product by ID
-* Update product stock
+  ![Get Product By ID](images/getproductbyID.png)
 
-### ✅ Validation
+* Manage product stock
+  ![Increase Stock](images/manageproduct_+.png)
+  ![Decrease Stock](images/manageproduct_-.png)
 
-* Input validation using annotations (`@NotNull`, `@Positive`)
-* Global exception handling
+---
 
-### ✅ REST API
+### 🌐 REST API
 
-* Clean RESTful endpoints
+* Clean RESTful endpoint design
 * Proper HTTP status codes (201, 200, 404, etc.)
 
-### ✅ Testing
+---
 
-* Unit Testing (Mockito)
+### 🧪 Testing
+
+* Unit Testing with Mockito
 * Controller Testing (`@WebMvcTest`)
 * Repository Testing (`@DataJpaTest`)
 
 ---
 
-## 🔌 API Endpoints
+## 📡 API Endpoints
 
 ### 📦 Product Endpoints
 
-| Method | Endpoint             | Description       |
-| ------ | -------------------- | ----------------- |
-| POST   | `/api/products`      | Create product    |
-| GET    | `/api/products`      | Get all products  |
-| GET    | `/api/products/{id}` | Get product by ID |
+| Method | Endpoint                   | Description          |
+| ------ | -------------------------- | -------------------- |
+| POST   | `/api/products`            | Create product       |
+| GET    | `/api/products`            | Get all products     |
+| GET    | `/api/products/{id}`       | Get product by ID    |
+| PATCH  | `/api/products/{id}/stock` | Update product stock |
 
 ---
 
-## 🧪 Sample Request
+## 📥 Sample Request
 
-### ➤ Create Product
+### Create Product
 
 ```json
 POST /api/products
@@ -91,7 +100,7 @@ Content-Type: application/json
 
 ---
 
-## 📥 Sample Response
+## 📤 Sample Response
 
 ```json
 {
@@ -106,12 +115,26 @@ Content-Type: application/json
 
 ---
 
+## ▶️ Running the Application
+
+```bash
+mvn spring-boot:run
+```
+
+Expected result:
+
+```
+BUILD SUCCESS
+```
+
+![Spring Boot Run](images/mvn springbootrunresult1.png)
+![Spring Boot Run Logs](images/mvn springbootrunresult2.png)
 
 ---
 
 ## 🧪 Running Tests
 
-```
+```bash
 mvn test
 ```
 
@@ -121,27 +144,39 @@ Expected result:
 BUILD SUCCESS
 ```
 
+![Test Result](images/mvntestresult.png)
+
 ---
 
 ## 🗄️ H2 Database Console
 
-Access:
+Access the H2 console at:
 
 ```
 http://localhost:8080/h2-console
 ```
 
-Configuration:
+![H2 Console](images/H2-console.png)
+![H2 Stock Update](images/H2-consolestockupdate.png)
 
-* JDBC URL: `jdbc:h2:mem:testdb`
+### Configuration
+
+* JDBC URL: `jdbc:h2:mem:shopwave-db`
 * Username: `sa`
 * Password: *(leave empty)*
 
+---
 
+## 👤 Author
 
-## 👨‍💻 Author
-
-Simon Mesfin
+**Name:** Simon Mesfin
+**ID:** ATE/7211/14
 
 ---
 
+## 🙌 Acknowledgements
+
+* ChatGPT – Technical guidance & documentation support
+* GeeksforGeeks – Concept explanations
+
+---
