@@ -127,8 +127,8 @@ Expected result:
 BUILD SUCCESS
 ```
 
-![Spring Boot Run](images/mvn springbootrunresult1.png)
-![Spring Boot Run Logs](images/mvn springbootrunresult2.png)
+![Spring Boot Run](images/mvnspringbootrunresult1.png)
+![Spring Boot Run Logs](images/mvnspringbootrunresult2.png)
 
 ---
 
